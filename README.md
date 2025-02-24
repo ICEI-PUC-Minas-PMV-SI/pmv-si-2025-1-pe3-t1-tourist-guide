@@ -1,4 +1,4 @@
-# Título do Projeto
+# Tourist Guide - Guia Turístico da Cidade
 
 `CURSO: Sistemas de Informação`
 
@@ -6,20 +6,22 @@
 
 `SEMESTRE: 3º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O Tourist Guide é um sistema voltado para o cadastro e descoberta de locais turísticos da cidade, permitindo que moradores e visitantes encontrem pontos de interesse, atrações culturais e experiências únicas. O projeto segue os princípios do Design Centrado no Usuário, priorizando uma interface intuitiva e acessível para garantir uma experiência fluida e agradável.
+
+Para o desenvolvimento do frontend, utilizaremos React, uma biblioteca JavaScript amplamente adotada para a construção de interfaces dinâmicas e responsivas. Com o uso de componentização, estado gerenciado e roteamento eficiente, o sistema proporcionará uma navegação ágil e interativa. A tecnologia escolhida permitirá escalabilidade, reutilização de código e uma melhor experiência do usuário, alinhada com as boas práticas de desenvolvimento moderno.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Marco Túlio Candeo
+* Daniele Aparecida de Souza
+* Lucas Eduardo Silva Couto
+* Pedro Henrique Fileti Kuhn
+* Rodrigo Figueira de Lima
+* Vinícius de Araújo Portela
 
 ## Orientador
 
-* Nome completo do professor 
+* Fábio Martins de Oliveira
 
 # Planejamento
 
