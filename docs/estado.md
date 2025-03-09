@@ -1,10 +1,9 @@
 # 2. ESTADO DA ARTE
-O estado da arte é um mapeamento de toda a produção acadêmica sobre um assunto específico, aqui especificamente sobre o tema escolhido para o seu trabalho. A ideia consiste em reunir as conclusões que outras pesquisas científicas chegaram sobre um determinado assunto. Neste momento você deverá buscar respostas para as seguintes perguntas:
 
-1.	Quais pesquisas estão sendo desenvolvidas sobre esse tema?
-2.	Quem está pesquisando e onde?
-3.	O que as atuais pesquisas científicas concluíram sobre o tema? 
-4.	Quais as divergências dos pesquisadores sobre o assunto? 
-5.	Quais aspectos carecem de maior abordagem?
+De acordo com Brito (2023), o setor do turismo desempenha um papel fundamental na economia global, gerando empregos, impulsionando o comércio e contribuindo para o desenvolvimento das cidades. No Brasil, a diversidade de atrativos naturais, culturais e históricos fortalece ainda mais essa atividade, tornando essencial o investimento em tecnologias que aprimorem a experiência dos visitantes.
 
-É importante referenciar estas pesquisas, fazendo as devidas citações de acordo com as normas da ABNT e colocando as referências completas ao final do trabalho.
+O turismo tem passado por significativas transformações devido ao avanço da tecnologia móvel. O uso de aplicativos para dispositivos móveis tem facilitado o acesso às informações sobre destinos turísticos, proporcionando uma experiência mais dinâmica e interativa para os viajantes. Estudos indicam que a adoção dessas tecnologias influencia diretamente o comportamento dos turistas, incentivando o compartilhamento de conteúdos e a personalização das experiências de viagem (MENDES FILHO et al., 2017).
+
+Segundo Silva, Gosling e Gosling (2018), o mercado de aplicativos móveis tem crescido significativamente, impulsionado pelos avanços tecnológicos e pela expansão do acesso à internet. Este cenário tem favorecido especialmente o setor de turismo, que é caracterizado por seu grande volume e potencial de crescimento. O estudo realizado pelos autores teve como objetivo analisar os fatores que influenciam a probabilidade de uso de aplicativos para destinos turísticos. A pesquisa, realizada com 324 participantes em maio de 2018, revelou que, entre os cinco fatores estudados, apenas a usabilidade do aplicativo e as informações gerais sobre o destino aumentam a intenção de uso desses aplicativos turísticos.
+
+A proposta do nosso trabalho se relaciona com os estudos mencionados, uma vez que busca facilitar o acesso e a pesquisa sobre destinos turísticos pouco conhecidos em uma plataforma digital, tornando essas informações acessíveis a todos os usuários da internet. Além disso, a conexão com os demais estudos é evidente, pois o foco deste trabalho está em dar mais acessibilidade e distribuição de informações sobre os pontos turísticos, bem como incentivar a interação entre os turistas por meio de avaliações e comentários, o que proporciona uma experiência mais rica e dinâmica ao utilizar aplicativos voltados para o turismo.
