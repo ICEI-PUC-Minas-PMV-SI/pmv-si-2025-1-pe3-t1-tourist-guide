@@ -1,9 +1,10 @@
 # 3. DOCUMENTO DE ESPECIFICAÇÃO DE REQUISITOS DE SOFTWARE
 
-Nesta parte do trabalho você deve detalhar a documentação dos requisitos do sistema proposto de acordo com as seções a seguir. Ressalta-se que aqui é utilizado como exemplo um sistema de gestão de cursos de aperfeiçoamento.
+Constarão a seguir os detalhamentos dos requisitos do sistema.
 
 ## 3.1 Objetivos deste documento
-Descrever e especificar as necessidades da Coordenação do Curso de Sistemas de Informação da PUC Minas que devem ser atendidas pelo projeto SCCA – Sistema de Cadastro de Cursos de Aperfeiçoamento.
+Descrever e especificar as necessidades dos Usuários que devem ser
+atendidas pelo projeto Tourist Guide.
 
 ## 3.2 Escopo do produto
 
@@ -31,27 +32,30 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 
 | Código | Requisito Funcional (Funcionalidade) | Descrição |
 |--------------------|------------------------------------|----------------------------------------|
-| RF1 | Gerenciar Curso de Aperfeiçoamento |	Processamento de Inclusão, Alteração, Exclusão e Consulta de Cursos de Aperfeiçoamento |
-| RF2 |	Gerenciar Professor	| Processamento de Inclusão, Alteração, Exclusão e Consulta de professores |
-| RF3	| Gerenciar Matrícula |	Processamento de Inclusão, Alteração, Exclusão e Consulta de Matrículas de alunos em Cursos de Aperfeiçoamento |
-| ... |	...	| ... |
+| RF1 | Gerenciar Usuários |	Processamento de Inclusão, Alteração, Exclusão e Consulta de Usuárioas |
+| RF2 |	Gerenciar Postagens	| Processamento de Inclusão, Alteração, Exclusão e Consulta de postagens |
+| RF3 | Gerenciar Locais Turísticos |	Permitir o cadastro, edição, exclusão e consulta de locais turísticos. Pode ser restrito ao Admin ou aberto aos usuários. |
+| RF4 |	Avaliar Locais	| Permitir que usuários registrem avaliações e notas sobre locais turísticos. |
+| RF5 | 	Buscar Locais Turísticos |	Sistema de busca textual com filtro por cidade, nome, tipo de atração etc. |
+| RF6 |	Filtrar Locais por Critérios	| Filtro por tipo (praia, museu, parque...), nota média, distância, etc.
+| RF7 | Autenticar Usuário |	Sistema de login e logout para controle de acesso (Admin vs Usuário).
+| RF8 |	Gerenciar Comentários nas Postagens	| Processamento de Inclusão, Alteração, Exclusão e Consulta de postagens 
 
 ### 3.3.2 Requisitos Não Funcionais
 
 | Código | Requisito Não Funcional (Restrição) |
 |--------------------|------------------------------------|
-| RNF1 | O ambiente operacional a ser utilizado é o Windows XP. |
-| RNF2 | O sistema deverá executar em um computador configurado com uma impressora de tecnologia laser ou de jato de tinta, a ser usada para impressão dos relatórios. |
-| RNF3 |	Segurança	O produto deve restringir o acesso por meio de senhas individuais para o usuário. |
-| ... |	... |	... |
+| RNF1 | Desempenho O sistema deve suportar até 100 usuários simultâneos sem degradação significativa de desempenho. |
+| RNF2 | Compatibilidade O software deve ser compatível com os sistemas operacionais Windows, macOS e Linux |
+| RNF3 | Segurança	O sistema deve possuir uma camada de firewall que restrinja o acesso de localidades não cadastradas no software. |
+| RNF4 | Usabilidade: A interface do usuário deve ser intuitiva, responsível e acessível, com suporte para múltiplos idiomas. |
 
 ### 3.3.3 Usuários 
 
 | Ator | Descrição |
 |--------------------|------------------------------------|
-| Coordenador |	Usuário gerente do sistema responsável pelo cadastro e manutenção de cursos de aperfeiçoamento. Possui acesso geral ao sistema. |
-| Secretaria |	Usuário responsável por registros de alunos, professores, turmas e gerência de matrículas. |
-| ... |	... |	... |
+| Admin |	Usuário que acesso geral ao sistema ele poderá editar qualquer postagem e alterar informações de outros usuários. |
+| Usuário padrão |	Usuário que possui permissão de gerenciar apenas suas postagens e interagir com postagens de terceiros. |
 
 ## 3.4 Modelagem do Sistema
 
