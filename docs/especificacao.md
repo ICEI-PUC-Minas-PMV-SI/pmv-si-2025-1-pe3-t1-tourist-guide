@@ -4,27 +4,37 @@ Constarão a seguir os detalhamentos dos requisitos do sistema.
 
 ## 3.1 Objetivos deste documento
 Descrever e especificar as necessidades dos Usuários que devem ser
-atendidas pelo projeto Tourist Guide.
+atendidas pelo projeto Tourist Guide, um sistema para compartilhamento e descoberta de locais turísticos.
 
 ## 3.2 Escopo do produto
 
 ### 3.2.1 Nome do produto e seus componentes principais
-O produto será denominado SCCA – Sistema de Cadastro de Cursos de Aperfeiçoamento. Ele terá somente um componente (módulo) com os devidos elementos necessários à gestão de cursos.
+O produto será denominado Tourist Guide. Ele terá os seguintes componentes principais:
+- Sistema de gerenciamento de usuários
+- Sistema de gerenciamento de locais turísticos
+- Sistema de avaliações e comentários
+- Sistema de busca e filtros
+- Interface web responsiva
 
 ### 3.2.2 Missão do produto
-Gerenciar informações sobre a oferta de cursos de aperfeiçoamento, gerenciar a composição das turmas, alunos, professores e matrículas. 
+Facilitar a descoberta e compartilhamento de locais turísticos, permitindo que usuários encontrem, avaliem e compartilhem experiências sobre destinos turísticos.
 
 ### 3.2.3 Limites do produto
-O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcelas do curso, pagamento a professore e agendamentos. O SCCA não contempla o atendimento a vários cursos de Sistemas de Informação de outras unidades da PUC Minas.
+O Tourist Guide não fornece:
+- Sistema de reservas ou agendamentos
+- Integração com sistemas de pagamento
+- Recomendações personalizadas baseadas em algoritmos complexos
+- Sistema de chat ou mensagens diretas entre usuários
 
 ### 3.2.4 Benefícios do produto
 
 | # | Benefício | Valor para o Cliente |
 |--------------------|------------------------------------|----------------------------------------|
-|1	| Facilidade no cadastro de dados |	Essencial |
-|2 | Facilidade na recuperação de informações | Essencial | 
-|3 | Segurança no cadastro de matrículas | Essencial | 
-|4	| Melhoria na comunicação com os alunos	| Recomendável | 
+|1	| Descoberta de novos destinos turísticos |	Essencial |
+|2 | Compartilhamento de experiências | Essencial | 
+|3 | Avaliações e recomendações da comunidade | Essencial | 
+|4	| Busca e filtros eficientes	| Essencial | 
+|5 | Interface intuitiva e responsiva | Recomendável |
 
 ## 3.3 Descrição geral do produto
 
@@ -60,77 +70,61 @@ O SCCA não fornece nenhuma forma de avaliação de alunos, pagamento de parcela
 ## 3.4 Modelagem do Sistema
 
 ### 3.4.1 Diagrama de Casos de Uso
-Como observado no diagrama de casos de uso da Figura 1, a secretária poderá gerenciar as matrículas e professores no sistema, enquanto o coordenador, além dessas funções, poderá gerenciar os cursos de aperfeiçoamento.
 
 #### Figura 1: Diagrama de Casos de Uso do Sistema.
 
-![dcu](https://github.com/user-attachments/assets/41f6b731-b44e-43aa-911f-423ad6198f47)
+[DCU]
  
 ### 3.4.2 Descrições de Casos de Uso
 
-Cada caso de uso deve ter a sua descrição representada nesta seção. Exemplo:
+#### Gerenciar Locais Turísticos (CSU01)
 
-#### Gerenciar Professor (CSU01)
+Sumário: O usuário realiza a gestão (inclusão, remoção, alteração e consulta) dos dados sobre locais turísticos.
 
-Sumário: A Secretária realiza a gestão (inclusão, remoção, alteração e consulta) dos dados sobre professores.
+Ator Primário: Usuário/Admin
 
-Ator Primário: Secretária.
-
-Ator Secundário: Coordenador.
-
-Pré-condições: A Secretária deve ser validada pelo Sistema.
+Pré-condições: O usuário deve estar autenticado no sistema.
 
 Fluxo Principal:
+1. O usuário acessa a seção de locais turísticos
+2. O sistema apresenta as operações disponíveis: adicionar, editar, remover ou consultar locais
+3. O usuário seleciona a operação desejada
+4. O sistema executa a operação solicitada
+5. O sistema atualiza a lista de locais
 
-1) 	A Secretária requisita manutenção de professores.
-2) 	O Sistema apresenta as operações que podem ser realizadas: inclusão de um novo professor, alteração de um professor, a exclusão de um professor e a consulta de dados de um professor.
-3) 	A Secretária seleciona a operação desejada: Inclusão, Exclusão, Alteração ou Consulta, ou opta por finalizar o caso de uso.
-4) 	Se a Secretária desejar continuar com a gestão de professores, o caso de uso retorna ao passo 2; caso contrário o caso de uso termina.
+Fluxo Alternativo (3): Adicionar Local
+a. O usuário preenche o formulário com dados do local (nome, descrição, endereço, tipo, etc.)
+b. O sistema valida os dados
+c. O sistema salva o novo local
+d. O sistema confirma o cadastro
 
-Fluxo Alternativo (3): Inclusão
+#### Avaliar Local (CSU02)
 
-a)	A Secretária requisita a inclusão de um professor. <br>
-b)	O Sistema apresenta uma janela solicitando o CPF do professor a ser cadastrado. <br>
-c)	A Secretária fornece o dado solicitado. <br>
-d)	O Sistema verifica se o professor já está cadastrado. Se sim, o Sistema reporta o fato e volta ao início; caso contrário, apresenta um formulário em branco para que os detalhes do professor (Código, Nome, Endereço, CEP, Estado, Cidade, Bairro, Telefone, Identidade, Sexo, Fax, CPF, Data do Cadastro e Observação) sejam incluídos. <br>
-e)	A Secretária fornece os detalhes do novo professor. <br>
-f)	O Sistema verifica a validade dos dados. Se os dados forem válidos, inclui o novo professor e a grade listando os professores cadastrados é atualizada; caso contrário, o Sistema reporta o fato, solicita novos dados e repete a verificação. <br>
+Sumário: O usuário avalia um local turístico com nota e comentário.
 
-Fluxo Alternativo (3): Remoção
+Ator Primário: Usuário
 
-a)	A Secretária seleciona um professor e requisita ao Sistema que o remova. <br>
-b)	Se o professor pode ser removido, o Sistema realiza a remoção; caso contrário, o Sistema reporta o fato. <br>
+Pré-condições: O usuário deve estar autenticado.
 
-Fluxo Alternativo (3): Alteração
-
-a)	A Secretária altera um ou mais dos detalhes do professor e requisita sua atualização. <br>
-b)	O Sistema verifica a validade dos dados e, se eles forem válidos, altera os dados na lista de professores, caso contrário, o erro é reportado. <br>
- 
-Fluxo Alternativo (3): Consulta
-
-a)	A Secretária opta por pesquisar pelo nome ou código e solicita a consulta sobre a lista de professores. <br>
-b)	O Sistema apresenta uma lista professores. <br>
-c)	A Secretária seleciona o professor. <br>
-d)	O Sistema apresenta os detalhes do professor no formulário de professores. <br>
-
-Pós-condições: Um professor foi inserido ou removido, seus dados foram alterados ou apresentados na tela.
+Fluxo Principal:
+1. O usuário acessa a página do local turístico
+2. O usuário seleciona a opção de avaliar
+3. O usuário fornece uma nota (1-5) e um comentário
+4. O sistema salva a avaliação
+5. O sistema atualiza a média de avaliações do local
 
 ### 3.4.3 Diagrama de Classes 
 
-A Figura 2 mostra o diagrama de classes do sistema. A Matrícula deve conter a identificação do funcionário responsável pelo registro, bem com os dados do aluno e turmas. Para uma disciplina podemos ter diversas turmas, mas apenas um professor responsável por ela.
+#### Figura 2: Diagrama de Classes do Tourist Guide
 
-#### Figura 2: Diagrama de Classes do Sistema.
- 
-![image](https://github.com/user-attachments/assets/abc7591a-b46f-4ea2-b8f0-c116b60eb24e)
-
+[Diagrama de Classes]
 
 ### 3.4.4 Descrições das Classes 
 
 | # | Nome | Descrição |
 |--------------------|------------------------------------|----------------------------------------|
-| 1	|	Aluno |	Cadastro de informações relativas aos alunos. |
-| 2	| Curso |	Cadastro geral de cursos de aperfeiçoamento. |
-| 3 |	Matrícula |	Cadastro de Matrículas de alunos nos cursos. |
-| 4 |	Turma |	Cadastro de turmas.
-| 5	|	Professor |	Cadastro geral de professores que ministram as disciplinas. |
-| ... |	... |	... |
+| 1	| Usuário |	Representa os usuários do sistema, com seus dados e permissões |
+| 2	| Local |	Representa um local turístico com suas características e avaliações |
+| 3 | Avaliacao |	Representa as avaliações feitas pelos usuários nos locais |
+| 4 | Comentario |	Representa os comentários feitos pelos usuários |
+| 5	| Postagem |	Representa as postagens sobre locais turísticos |
