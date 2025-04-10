@@ -42,14 +42,22 @@ O Tourist Guide não fornece:
 
 | Código | Requisito Funcional (Funcionalidade) | Descrição |
 |--------------------|------------------------------------|----------------------------------------|
-| RF1 | Gerenciar Usuários |	Processamento de Inclusão, Alteração, Exclusão e Consulta de Usuárioas |
+| RF1 | Gerenciar Usuários |	Processamento de Inclusão, Alteração, Exclusão e Consulta de Usuários |
 | RF2 |	Gerenciar Postagens	| Processamento de Inclusão, Alteração, Exclusão e Consulta de postagens |
-| RF3 | Gerenciar Locais Turísticos |	Permitir o cadastro, edição, exclusão e consulta de locais turísticos. Pode ser restrito ao Admin ou aberto aos usuários. |
-| RF4 |	Avaliar Locais	| Permitir que usuários registrem avaliações e notas sobre locais turísticos. |
-| RF5 | 	Buscar Locais Turísticos |	Sistema de busca textual com filtro por cidade, nome, tipo de atração etc. |
-| RF6 |	Filtrar Locais por Critérios	| Filtro por tipo (praia, museu, parque...), nota média, distância, etc.
-| RF7 | Autenticar Usuário |	Sistema de login e logout para controle de acesso (Admin vs Usuário).
-| RF8 |	Gerenciar Comentários nas Postagens	| Processamento de Inclusão, Alteração, Exclusão e Consulta de postagens 
+| RF3 | Gerenciar Locais Turísticos |	Permitir o cadastro, edição, exclusão e consulta de locais turísticos |
+| RF4 |	Avaliar Locais	| Permitir que usuários registrem avaliações e notas sobre locais turísticos |
+| RF5 | 	Buscar Locais Turísticos |	Sistema de busca textual com filtro por cidade, nome, tipo de atração etc |
+| RF6 |	Filtrar Locais por Critérios	| Filtro por tipo (praia, museu, parque...), nota média, distância, etc |
+| RF7 | Autenticar Usuário |	Sistema de login e logout para controle de acesso (Admin vs Usuário) |
+| RF8 |	Gerenciar Comentários	| Processamento de Inclusão, Alteração, Exclusão e Consulta de comentários |
+| RF9 | Compartilhar Local | Permitir que usuários compartilhem locais turísticos em redes sociais |
+| RF10 | Criar Roteiros | Permitir que usuários criem e gerenciem roteiros de viagem com múltiplos locais |
+| RF11 | Favoritar Locais | Permitir que usuários marquem locais como favoritos para acesso rápido |
+| RF12 | Notificações | Sistema de notificações para atualizações de locais favoritos ou roteiros |
+| RF13 | Galeria de Fotos | Permitir que usuários façam upload e gerenciem fotos dos locais visitados |
+| RF14 | Relatórios de Popularidade | Gerar relatórios sobre os locais mais populares e bem avaliados |
+| RF15 | Moderação de Conteúdo | Sistema para administradores moderarem conteúdo inadequado |
+| RF16 | Contatar por whatsapp | Entra em contato com a empresa através do whatsapp |
 
 ### 3.3.2 Requisitos Não Funcionais
 
