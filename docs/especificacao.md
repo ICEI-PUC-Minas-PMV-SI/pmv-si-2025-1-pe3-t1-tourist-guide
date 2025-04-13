@@ -81,7 +81,8 @@ O Tourist Guide não fornece:
 
 #### Figura 1: Diagrama de Casos de Uso do Sistema.
 
-[DCU]
+![image](https://github.com/user-attachments/assets/b8deceb1-e76a-4f99-8397-7f5a0a611489)
+
  
 ### 3.4.2 Descrições de Casos de Uso
 
