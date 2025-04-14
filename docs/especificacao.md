@@ -126,7 +126,8 @@ Fluxo Principal:
 
 #### Figura 2: Diagrama de Classes do Tourist Guide
 
-![image](https://github.com/user-attachments/assets/507ae0b3-3336-4aa7-8777-4961953c63ad)
+![descrição](assets/img/ClassDiagram.drawio.png)
+
 
 
 ### 3.4.4 Descrições das Classes 
