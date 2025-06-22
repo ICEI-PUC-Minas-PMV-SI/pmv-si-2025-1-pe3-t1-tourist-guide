@@ -37,6 +37,10 @@ export default function Dashboard() {
     router.push('/local/' + place.id);
   }
 
+  const onClickAdd = () => {
+    router.push('/local/cadastro');
+  }
+
   return <div className={"h-full flex flex-col overflow-hidden"}>
     <div className={"w-full bg-slate-900 p-4"}>
       <div className={"flex items-center"}>
@@ -66,5 +70,14 @@ export default function Dashboard() {
       </div>
     </div>
 
+    <div className={"h-[60px] flex items-center justify-around"}>
+      <button className={"flex flex-col"}>
+        <span className={"text-[14px] text-blue-500"}>Home</span>
+      </button>
+
+      <button className={"flex flex-col"} onClick={onClickAdd}>
+        <span className={"text-[14px] text-slate-500"}>Adicionar</span>
+      </button>
+    </div>
   </div>
 }
