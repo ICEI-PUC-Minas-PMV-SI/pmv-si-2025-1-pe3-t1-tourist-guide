@@ -6,7 +6,7 @@ import {writeFileSync} from "node:fs";
 const filePath = path.join(
   "src",
   "db",
-  "users.json"
+  "places.json"
 )
 
 export function readPlaces(): IPlace[] {

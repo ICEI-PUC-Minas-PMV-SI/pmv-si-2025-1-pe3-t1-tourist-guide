@@ -5,53 +5,36 @@ import Input from "@/components/Input";
 import Chip from "@/components/Chip";
 import {EPlaceCategory, IPlace} from "@/@types/place.interface";
 import PlaceCard from "@/components/PlaceCard";
+import {useRouter} from "next/navigation";
+import {listPlaces} from "@/actions/list-places";
+import toast from "react-hot-toast";
 
 export default function Dashboard() {
+  const router = useRouter()
   const [category, setCategory] = useState(EPlaceCategory.All)
-  const [filter, setFilter] = useState('')
+  const [search, setSearch] = useState('')
+  const [places, setPlaces] = useState<IPlace[]>([])
 
-  const [places, setPlaces] = useState<IPlace[]>([
-    {
-      imageUrl: '/praia.jpg',
-      category: EPlaceCategory.City,
-      content: 'Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.',
-      createdAt: new Date().toISOString(),
-      creatorId: 1,
-      id: 1,
-      location: 'Imbituba, SC',
-      title: 'Praia da Rosa',
-      updatedAt: new Date().toISOString()
-    },
-    {
-      imageUrl: '/praia.jpg',
-      category: EPlaceCategory.City,
-      content: 'Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.',
-      createdAt: new Date().toISOString(),
-      creatorId: 1,
-      id: 1,
-      location: 'Imbituba, SC',
-      title: 'Praia da Rosa',
-      updatedAt: new Date().toISOString()
-    },
-    {
-      imageUrl: '/praia.jpg',
-      category: EPlaceCategory.City,
-      content: 'Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.',
-      createdAt: new Date().toISOString(),
-      creatorId: 1,
-      id: 1,
-      location: 'Imbituba, SC',
-      title: 'Praia da Rosa',
-      updatedAt: new Date().toISOString()
+  const fetchPlaces = async () => {
+    try {
+      const res = await listPlaces({ category, search });
+      setPlaces(res.places);
+    } catch (err) {
+      console.error(err)
+      toast.error('Ocorreu um erro ao buscar os lugares.')
     }
-  ])
+  }
 
   useEffect(() => {
-    // DEV
-  }, []);
+    fetchPlaces()
+  }, [search, category]);
 
   const onClick = (category: EPlaceCategory) => {
     setCategory(category);
+  }
+
+  const onClickCard = (place: IPlace) => {
+    router.push('/local/' + place.id);
   }
 
   return <div className={"h-full flex flex-col overflow-hidden"}>
@@ -61,11 +44,11 @@ export default function Dashboard() {
         <span className={"font-extrabold text-white ml-2"}>Tourist Guide</span>
       </div>
 
-      <Input wrapperClassName={"mt-3"} placeholder={"Buscar lugares, cidades, atrações..."} startContent={<Image src={'search.svg'} alt={'Search'} width={20} height={20}/>} value={filter} onChange={(e) => setFilter(e.target.value)} />
+      <Input wrapperClassName={"mt-3"} placeholder={"Buscar lugares, cidades, atrações..."} startContent={<Image src={'search.svg'} alt={'Search'} width={20} height={20}/>} value={search} onChange={(e) => setSearch(e.target.value)} />
     </div>
-    <div className={"shadow-sm p-3 flex gap-2"}>
+    <div className={"shadow-sm p-3 flex gap-2 overflow-x-auto"}>
       <Chip isSelected={category === EPlaceCategory.All} onClick={() => onClick(EPlaceCategory.All)}>Todos</Chip>
-      <Chip isSelected={category === EPlaceCategory.Beach} onClick={() => setCategory(EPlaceCategory.Beach)}>Hotéis</Chip>
+      <Chip isSelected={category === EPlaceCategory.Beach} onClick={() => setCategory(EPlaceCategory.Beach)}>Praias</Chip>
       <Chip isSelected={category === EPlaceCategory.Mountain} onClick={() => setCategory(EPlaceCategory.Mountain)}>Montanhas</Chip>
       <Chip isSelected={category === EPlaceCategory.City} onClick={() => setCategory(EPlaceCategory.City)}>Cidades</Chip>
       <Chip isSelected={category === EPlaceCategory.Park} onClick={() => setCategory(EPlaceCategory.Park)}>Parques</Chip>
@@ -77,7 +60,8 @@ export default function Dashboard() {
       <div className={"p-4 max-w-[1200px] w-full overflow-y-auto h-full"}>
         <span className={"text-[16px] font-bold text-slate-900 mb-3 block"}>Lugares Populares</span>
         <div className={"flex flex-wrap gap-4"}>
-          {places.map(place => <PlaceCard key={place.id} place={place} />)}
+          {places.map(place => <PlaceCard key={place.id} place={place} onClick={onClickCard} />)}
+          {places.length === 0 && <span className={"text-gray-500 text-sm"}>Nenhum lugar encontrado.</span>}
         </div>
       </div>
     </div>

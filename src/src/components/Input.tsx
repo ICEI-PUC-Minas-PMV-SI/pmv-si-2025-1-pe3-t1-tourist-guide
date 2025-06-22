@@ -20,7 +20,7 @@ export default function Input({ className, wrapperClassName, startContent, type,
     <div className={clsx("rounded-2 outline-transparent border-slate-200 focus-within:outline-slate-500/30 focus-within:border-1 focus-within:border-slate-900 focus-within:outline-3 bg-white border-1", styles.input)}>
       <div className={"flex"}>
         {startContent && <div className={"flex items-center ml-2 -mr-2"}>{startContent}</div>}
-        <input type={type} className={clsx(className, "flex-1 outline-none text-[12px]! p-[13px]")} placeholder={placeholder} value={value} onChange={onChange} />
+        <input type={type} className={clsx(className, "flex-1 outline-none text-[12px]! p-[13px] [&::placeholder]:font-[500] [&::placeholder]:text-gray-400")} placeholder={placeholder} value={value} onChange={onChange} />
       </div>
     </div>
     {error && <span className={"text-[12px] text-red-400"}>{error}</span>}

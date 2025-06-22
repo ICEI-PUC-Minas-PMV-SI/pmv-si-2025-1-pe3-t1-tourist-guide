@@ -3,13 +3,14 @@ import Image from "next/image";
 
 interface IPlaceCardProps {
   place: IPlace
+  onClick?: (place: IPlace) => void;
 }
 
-export default function PlaceCard({ place }: IPlaceCardProps) {
+export default function PlaceCard({ place, onClick }: IPlaceCardProps) {
   const textCut = place.content.slice(0, 180);
   const textSuffix = place.content.length > 180 ? '...' : '';
 
-  return <div className={"shadow-lg bg-white rounded-md w-[380px]"}>
+  return <div className={"shadow-lg bg-white rounded-md w-[380px] cursor-pointer"} onClick={() => onClick?.(place)}>
     <Image src={place.imageUrl} alt={place.title} width={380} height={200} className={"rounded-top-2"}/>
     <div className={"p-3"}>
       <div className={"flex"}>
