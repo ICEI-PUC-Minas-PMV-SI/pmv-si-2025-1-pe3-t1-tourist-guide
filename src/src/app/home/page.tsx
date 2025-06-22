@@ -96,10 +96,10 @@ export default function Home() {
       <Chip isSelected={category === EPlaceCategory.Other} onClick={() => setCategory(EPlaceCategory.Other)}>Outros</Chip>
     </div>
 
-    <div className={"flex flex-col items-center overflow-hidden flex-1"}>
-      <div className={"p-4 max-w-[1200px] w-full overflow-y-auto h-full"}>
-        <span className={"text-[16px] font-bold text-slate-900 mb-3 block"}>Lugares Populares</span>
-        <div className={"flex flex-wrap gap-4"}>
+    <div className={"flex flex-col items-center overflow-y-auto flex-1"}>
+      <div className={"max-w-[1400px] w-full h-full"}>
+        <span className={"text-[16px] font-bold text-slate-900 p-4 pb-0 block"}>Lugares Populares</span>
+        <div className={"flex flex-wrap gap-4 p-4"}>
           {places.map(place => <PlaceCard
             key={place.id}
             place={place}
