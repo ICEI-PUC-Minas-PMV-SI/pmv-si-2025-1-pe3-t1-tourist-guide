@@ -1,6 +1,8 @@
 [
   {
-    "imageUrls": ["/praia.jpg"],
+    "imageUrls": [
+      "/praia.jpg"
+    ],
     "category": "city",
     "content": "Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.",
     "createdAt": "2025-06-22T00:00:00.000Z",
@@ -11,7 +13,9 @@
     "updatedAt": "2025-06-22T00:00:00.000Z"
   },
   {
-    "imageUrls": ["/praia.jpg"],
+    "imageUrls": [
+      "/praia.jpg"
+    ],
     "category": "beach",
     "content": "Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.",
     "createdAt": "2025-06-22T00:00:00.000Z",
@@ -22,7 +26,9 @@
     "updatedAt": "2025-06-22T00:00:00.000Z"
   },
   {
-    "imageUrls": ["/praia.jpg"],
+    "imageUrls": [
+      "/praia.jpg"
+    ],
     "category": "other",
     "content": "Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.",
     "createdAt": "2025-06-22T00:00:00.000Z",
@@ -31,5 +37,18 @@
     "location": "Imbituba, SC",
     "title": "Museu de Arte Moderna",
     "updatedAt": "2025-06-22T00:00:00.000Z"
+  },
+  {
+    "title": "ASD",
+    "location": "asd",
+    "category": "beach",
+    "content": "asd asd",
+    "imageUrls": [
+      "/uploads/bee59405-3388-4699-b7ee-96d4cf2dbc74"
+    ],
+    "creatorId": "f11b6164-1a6c-4f80-af35-ec082746f05f",
+    "id": "ef85b6ef-6d6a-4408-bf13-35e06cfac9bb",
+    "createdAt": "2025-06-22T18:15:02.639Z",
+    "updatedAt": "2025-06-22T18:15:02.639Z"
   }
 ]

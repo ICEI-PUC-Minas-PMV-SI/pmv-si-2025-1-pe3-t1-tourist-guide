@@ -8,6 +8,8 @@ import clsx from "clsx";
 import {BottomMenu} from "@/components/BottomMenu";
 import {createPlace} from "@/actions/create-place";
 import {useRouter} from "next/navigation";
+import toast from "react-hot-toast";
+import {json} from "node:stream/consumers";
 
 const getCategoryIcon = (category: EPlaceCategory) => {
   switch (category) {
@@ -81,14 +83,21 @@ export default function LocalRegister() {
   const submit = async () => {
     const fileUrls = [];
     for (const file of files) {
-      const res = await fetch("/api/upload-file", {
-        method: "POST",
-        headers: { "Content-Type": file.type },
-        body: file,
+      const formData = new FormData();
+      formData.append('image', file);
+
+      const response = await fetch('/api/upload-file', {
+        method: 'POST',
+        body: formData,
       });
 
-      const json = await res.json();
-      fileUrls.push(json.imageUrl);
+      if (response.ok) {
+        const result = await response.json();
+        fileUrls.push(result.imageUrl);
+      } else {
+        toast.error('Erro ao enviar arquivo');
+        return;
+      }
     }
 
     const placeData: ICreatePlaceDto = {
