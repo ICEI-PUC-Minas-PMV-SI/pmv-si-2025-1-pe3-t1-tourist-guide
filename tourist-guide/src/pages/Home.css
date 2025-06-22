@@ -9,9 +9,10 @@ body {
 }
 
 .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px 0;
+    max-width: 100vw;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 40px 0;
 }
 
 .header {
@@ -167,8 +168,13 @@ body {
 
 .tourist-spots-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* aumenta min-width e garante ocupação total */
+    gap: 40px;
+    margin-bottom: 40px;
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0 32px;
+    box-sizing: border-box;
 }
 
 .spot-card {
@@ -177,6 +183,9 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
+    min-height: 380px; /* aumenta a altura mínima dos cards */
+    display: flex;
+    flex-direction: column;
 }
 
 .spot-card:hover {
@@ -186,7 +195,7 @@ body {
 
 .spot-image-container {
     width: 100%;
-    height: 200px;
+    height: 240px; /* aumenta a altura da imagem */
     overflow: hidden;
     background-color: #eee;
     display: flex;
@@ -202,7 +211,11 @@ body {
 }
 
 .spot-content {
-    padding: 20px;
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .spot-title {
