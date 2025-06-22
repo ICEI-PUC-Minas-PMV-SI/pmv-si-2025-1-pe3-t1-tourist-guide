@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --bs-dark:        #0f172a !important;
+  --bs-btn-bg:      #0f172a !important;
+}
+
+.btn-dark {
+    --bs-btn-color: #ffffff !important;
+    --bs-btn-bg: var(--bs-dark) !important;
+    --bs-btn-border-color: var(--bs-dark) !important;
+    --bs-btn-hover-bg: #1e293b !important;
+    --bs-btn-hover-border-color: #1e293b !important;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  --font-sans: var(--font-poppins);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
