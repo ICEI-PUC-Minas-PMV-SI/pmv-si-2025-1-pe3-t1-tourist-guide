@@ -1,0 +1,5 @@
+.input {
+    transition:
+        border-color 0.15s linear,
+        outline-color 0.15s linear;
+}
