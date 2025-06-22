@@ -1,8 +1,16 @@
 import React from 'react';
 import '../pages/Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
+    const navigate = useNavigate();
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        // Aqui você pode adicionar validação/autenticação
+        navigate('/home');
+    };
+
     return (
         <div className="login-container">
             {/* Logo e Título do Aplicativo */}
@@ -16,7 +24,7 @@ const Login: React.FC = () => {
                 <h1 className="app-title">Tourist Guide</h1>
             </div>
             {/* Formulário de Login */}
-            <form className="login-form">
+            <form className="login-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="email" className="form-label">Email</label>
                     <input type="email" id="email" name="email" placeholder="Seu email" className="form-input" />
@@ -48,7 +56,9 @@ const Login: React.FC = () => {
             </div>
             {/* Links de Recuperação de Senha e Registro */}
             <div className="text-center">
-                <a href="#" className="forgot-password-link">Esqueceu a senha?</a>
+                <button type="button" className="forgot-password-link" onClick={() => navigate('/recuperacao-senha')}>
+                    Esqueceu a senha?
+                </button>
             </div>
             <div className="signup-text">
                 Não tem uma conta?
