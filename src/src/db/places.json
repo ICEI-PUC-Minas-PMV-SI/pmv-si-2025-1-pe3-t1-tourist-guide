@@ -1,54 +1,80 @@
 [
   {
+    "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "title": "Cristo Redentor",
+    "location": "Rio de Janeiro, RJ",
+    "category": "mountain",
     "imageUrls": [
-      "/praia.jpg"
+      "/cristo-redentor.jpg"
     ],
-    "category": "city",
-    "content": "Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.",
-    "createdAt": "2025-06-22T00:00:00.000Z",
-    "creatorId": 1,
-    "id": "b8ce6a0f-903d-4d10-8a3b-87250a4ad675",
-    "location": "Imbituba, SC",
-    "title": "Praia da Rosa",
-    "updatedAt": "2025-06-22T00:00:00.000Z"
-  },
-  {
-    "imageUrls": [
-      "/praia.jpg"
-    ],
-    "category": "beach",
-    "content": "Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.",
-    "createdAt": "2025-06-22T00:00:00.000Z",
-    "creatorId": 1,
-    "id": "2a0c8843-d625-4dec-8794-d3d2733aa61b",
-    "location": "Imbituba, SC",
-    "title": "Praia da Rosa",
-    "updatedAt": "2025-06-22T00:00:00.000Z"
-  },
-  {
-    "imageUrls": [
-      "/praia.jpg"
-    ],
-    "category": "other",
-    "content": "Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.",
-    "createdAt": "2025-06-22T00:00:00.000Z",
-    "creatorId": 1,
-    "id": "481b418f-660d-4868-a321-e4421022eaba",
-    "location": "Imbituba, SC",
-    "title": "Museu de Arte Moderna",
-    "updatedAt": "2025-06-22T00:00:00.000Z"
-  },
-  {
-    "title": "ASD",
-    "location": "asd",
-    "category": "beach",
-    "content": "asd asd",
-    "imageUrls": [
-      "/uploads/bee59405-3388-4699-b7ee-96d4cf2dbc74"
-    ],
+    "content": "Uma das Sete Maravilhas do Mundo Moderno, o Cristo Redentor é um monumento icônico localizado no topo do Morro do Corcovado. Oferece uma vista panorâmica deslumbrante da cidade do Rio de Janeiro, incluindo o Pão de Açúcar, a Baía de Guanabara e as famosas praias. A estátua de art déco, com 30 metros de altura, é um símbolo do Brasil e um ponto de peregrinação e turismo que atrai milhões de visitantes todos os anos.",
     "creatorId": "f11b6164-1a6c-4f80-af35-ec082746f05f",
-    "id": "ef85b6ef-6d6a-4408-bf13-35e06cfac9bb",
-    "createdAt": "2025-06-22T18:15:02.639Z",
-    "updatedAt": "2025-06-22T18:15:02.639Z"
+    "createdAt": "2025-07-10T10:00:00.000Z",
+    "updatedAt": "2025-07-10T10:00:00.000Z"
+  },
+  {
+    "id": "f8e7d6c5-b4a3-4928-8765-1a2b3c4d5e6f",
+    "title": "Cataratas do Iguaçu",
+    "location": "Foz do Iguaçu, PR",
+    "category": "park",
+    "imageUrls": [
+      "/cataratas-iguacu.jpg"
+    ],
+    "content": "Localizadas no Parque Nacional do Iguaçu, na fronteira entre o Brasil e a Argentina, as Cataratas do Iguaçu são um dos maiores conjuntos de quedas d'água do mundo. A força e o volume da água criam um espetáculo inesquecível, com passarelas que permitem aos visitantes chegar bem perto das quedas, como a famosa Garganta do Diabo. É um Patrimônio Natural da Humanidade pela UNESCO.",
+    "creatorId": "f11b6164-1a6c-4f80-af35-ec082746f05f",
+    "createdAt": "2025-08-01T14:30:00.000Z",
+    "updatedAt": "2025-08-01T14:30:00.000Z"
+  },
+  {
+    "id": "b8c9d0e1-f2a3-4b4c-8d9e-5f6a7b8c9d0e",
+    "title": "Pelourinho",
+    "location": "Salvador, BA",
+    "category": "historical",
+    "imageUrls": [
+      "/pelourinho.jpg"
+    ],
+    "content": "O Centro Histórico de Salvador, conhecido como Pelourinho, é um tesouro da arquitetura colonial brasileira. Suas ruas de paralelepípedos são ladeadas por casarões coloridos, igrejas barrocas ricas em ouro e uma atmosfera cultural vibrante. O 'Pelô' é o coração da cultura afro-brasileira, repleto de música, capoeira, gastronomia e história em cada esquina.",
+    "creatorId": "f11b6164-1a6c-4f80-af35-ec082746f05f",
+    "createdAt": "2025-09-15T09:00:00.000Z",
+    "updatedAt": "2025-09-15T09:00:00.000Z"
+  },
+  {
+    "id": "1a2b3c4d-5e6f-4789-a0b1-c2d3e4f5a6b7",
+    "title": "Parque Nacional dos Lençóis Maranhenses",
+    "location": "Barreirinhas, MA",
+    "category": "park",
+    "imageUrls": [
+      "/lencois-maranhenses.jpg"
+    ],
+    "content": "Um deserto como nenhum outro no mundo. O Parque Nacional dos Lençóis Maranhenses é formado por um vasto campo de dunas de areia branca que, durante a estação chuvosa, acumulam água e formam milhares de lagoas de água doce, cristalina e em tons de azul e verde. O contraste entre as dunas e as lagoas cria uma paisagem surreal e de beleza única, ideal para caminhadas e mergulhos refrescantes.",
+    "creatorId": "f11b6164-1a6c-4f80-af35-ec082746f05f",
+    "createdAt": "2025-07-20T11:00:00.000Z",
+    "updatedAt": "2025-07-20T11:00:00.000Z"
+  },
+  {
+    "id": "e4f5a6b7-c8d9-4e0f-b1a2-c3d4e5f6a7b8",
+    "title": "Praia de Copacabana",
+    "location": "Rio de Janeiro, RJ",
+    "category": "beach",
+    "imageUrls": [
+      "/copacabana.png"
+    ],
+    "content": "Famosa mundialmente por seu calçadão com ondas em pedra portuguesa, a Praia de Copacabana é um dos cartões-postais do Rio de Janeiro. Com uma longa faixa de areia, é o cenário para eventos grandiosos, como o Réveillon, e o local perfeito para praticar esportes, tomar sol ou simplesmente apreciar a vista do Pão de Açúcar. A 'Princesinha do Mar' pulsa com energia dia e noite.",
+    "creatorId": "f11b6164-1a6c-4f80-af35-ec082746f05f",
+    "createdAt": "2025-10-05T16:00:00.000Z",
+    "updatedAt": "2025-10-05T16:00:00.000Z"
+  },
+  {
+    "id": "c3d4e5f6-a7b8-4901-b2c3-d4e5f6a7b8c9",
+    "title": "Parque Ibirapuera",
+    "location": "São Paulo, SP",
+    "category": "park",
+    "imageUrls": [
+      "/parque-ibirapuera.jpg"
+    ],
+    "content": "Considerado o pulmão verde de São Paulo, o Parque Ibirapuera é um oásis urbano que oferece uma vasta área para lazer, esportes e cultura. Além de seus lagos, jardins e pistas, o parque abriga importantes museus como o MAM e o Museu Afro Brasil, o Auditório Ibirapuera e o Pavilhão da Bienal. É o ponto de encontro preferido dos paulistanos para relaxar e se exercitar.",
+    "creatorId": "f11b6164-1a6c-4f80-af35-ec082746f05f",
+    "createdAt": "2025-11-22T08:45:00.000Z",
+    "updatedAt": "2025-11-22T08:45:00.000Z"
   }
 ]

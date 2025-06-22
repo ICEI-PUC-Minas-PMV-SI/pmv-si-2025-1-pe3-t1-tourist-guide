@@ -11,12 +11,12 @@ interface IPlaceCardProps {
 }
 
 export default function PlaceCard({ place, onClick, isFavorite, onFavoriteToggle }: IPlaceCardProps) {
-  const textCut = place.content.slice(0, 180);
-  const textSuffix = place.content.length > 180 ? '...' : '';
+  const textCut = place.content.slice(0, 120);
+  const textSuffix = place.content.length > 120 ? '...' : '';
 
-  return <div className={"shadow-lg bg-white rounded-md w-[380px] max-h-[450px] cursor-pointer"} onClick={() => onClick?.(place)}>
-    <Image src={place?.imageUrls?.[0]} alt={place.title} width={380} height={200} className={"rounded-top-2"}/>
-    <div className={"p-3"}>
+  return <div className={"shadow-lg bg-white rounded-md w-[380px] max-h-[450px] cursor-pointer overflow-hidden flex flex-col"} onClick={() => onClick?.(place)}>
+    <Image src={place?.imageUrls?.[0]} alt={place.title} width={380} height={210} className={"rounded-top-2 w-[380px] h-[210px]"}/>
+    <div className={"p-3 flex flex-col flex-1 overflow-hidden"}>
       <div className={"flex"}>
         <div>
           <h3 className={"text-[18px]! font-bold!"}>{place.title}</h3>
@@ -24,8 +24,8 @@ export default function PlaceCard({ place, onClick, isFavorite, onFavoriteToggle
         </div>
         <CategoryChip className={"ml-auto"} category={place.category} />
       </div>
-      <p className={"text-[14px]! font-[400]! text-gray-500! mt-2! block text-ellipsis"}>{textCut}{textSuffix}</p>
-      <div className={"flex justify-end"}>
+      <span className={"shrink-1 text-[14px]! font-[400]! text-gray-500! mt-2! block text-ellipsis overflow-hidde"}>{textCut}{textSuffix}</span>
+      <div className={"flex justify-end flex-1 items-end shrink-0"}>
         <button onClick={(ev) => {
           ev.preventDefault()
           ev.stopPropagation()
