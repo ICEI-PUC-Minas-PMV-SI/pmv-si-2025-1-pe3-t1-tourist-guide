@@ -8,12 +8,19 @@ import PlaceCard from "@/components/PlaceCard";
 import {useRouter} from "next/navigation";
 import {listPlaces} from "@/actions/list-places";
 import toast from "react-hot-toast";
+import {IUser} from "@/@types/user.interface";
+import {getMe} from "@/actions/get-me";
+import {favorite} from "@/actions/favorite";
+import {unfavorite} from "@/actions/unfavorite";
+import {BottomMenu} from "@/components/BottomMenu";
 
-export default function Dashboard() {
+export default function Home() {
   const router = useRouter()
   const [category, setCategory] = useState(EPlaceCategory.All)
   const [search, setSearch] = useState('')
   const [places, setPlaces] = useState<IPlace[]>([])
+
+  const [favorites, setFavorites] = useState<string[] | null>(null)
 
   const fetchPlaces = async () => {
     try {
@@ -25,8 +32,18 @@ export default function Dashboard() {
     }
   }
 
+  const fetchUser = async () => {
+    try {
+      const res = await getMe();
+      setFavorites(res.favorites)
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   useEffect(() => {
     fetchPlaces()
+    fetchUser()
   }, [search, category]);
 
   const onClick = (category: EPlaceCategory) => {
@@ -39,6 +56,25 @@ export default function Dashboard() {
 
   const onClickAdd = () => {
     router.push('/local/cadastro');
+  }
+
+  const onFavoriteToggle = async (place: IPlace, newFavorite: boolean) => {
+    if (!favorites) return;
+
+    console.log("onFavoriteToggle", place, newFavorite)
+    if (newFavorite) {
+      setFavorites((fvs) => {
+        if (!fvs) return null;
+        return [...fvs, place.id];
+      })
+      await favorite(place.id)
+    } else {
+      setFavorites(fvs => {
+        if (!fvs) return null;
+        return fvs.filter(id => id !== place.id)
+      })
+      await unfavorite(place.id)
+    }
   }
 
   return <div className={"h-full flex flex-col overflow-hidden"}>
@@ -64,20 +100,18 @@ export default function Dashboard() {
       <div className={"p-4 max-w-[1200px] w-full overflow-y-auto h-full"}>
         <span className={"text-[16px] font-bold text-slate-900 mb-3 block"}>Lugares Populares</span>
         <div className={"flex flex-wrap gap-4"}>
-          {places.map(place => <PlaceCard key={place.id} place={place} onClick={onClickCard} />)}
+          {places.map(place => <PlaceCard
+            key={place.id}
+            place={place}
+            onClick={onClickCard}
+            isFavorite={favorites?.includes(place.id)}
+            onFavoriteToggle={onFavoriteToggle}
+          />)}
           {places.length === 0 && <span className={"text-gray-500 text-sm"}>Nenhum lugar encontrado.</span>}
         </div>
       </div>
     </div>
 
-    <div className={"h-[60px] flex items-center justify-around"}>
-      <button className={"flex flex-col"}>
-        <span className={"text-[14px] text-blue-500"}>Home</span>
-      </button>
-
-      <button className={"flex flex-col"} onClick={onClickAdd}>
-        <span className={"text-[14px] text-slate-500"}>Adicionar</span>
-      </button>
-    </div>
+  <BottomMenu />
   </div>
 }

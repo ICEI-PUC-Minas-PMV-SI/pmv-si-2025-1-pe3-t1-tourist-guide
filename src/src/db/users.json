@@ -3,7 +3,10 @@
     "email": "vinicius.portela.stm@gmail.com",
     "password": "123",
     "name": "Vinícius de Araújo Portela",
-    "favorites": [],
-    "id": 0
+    "favorites": [
+      "2a0c8843-d625-4dec-8794-d3d2733aa61b",
+      "481b418f-660d-4868-a321-e4421022eaba"
+    ],
+    "id": "f11b6164-1a6c-4f80-af35-ec082746f05f"
   }
 ]

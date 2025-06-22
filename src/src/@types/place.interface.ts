@@ -18,14 +18,17 @@ export const readablePlaceCategories: Record<EPlaceCategory, string> = {
   [EPlaceCategory.Other]: "Outro",
 };
 
-export interface IPlace {
-  id: number;
+export interface ICreatePlaceDto {
   title: string;
   location: string;
   content: string;
-  imageUrl: string;
   category: EPlaceCategory;
-  creatorId: number;
+  imageUrls: string[];
+}
+
+export interface IPlace extends ICreatePlaceDto {
+  creatorId: string;
+  id: string;
   createdAt: string;
   updatedAt: string;
 }

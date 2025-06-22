@@ -5,6 +5,6 @@ export interface ICreateUserDto {
 }
 
 export interface IUser extends ICreateUserDto {
-  id: number;
-  favorites: number[];
+  id: string;
+  favorites: string[];
 }

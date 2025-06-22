@@ -47,7 +47,7 @@ export default function Login() {
 
       toast.success('Login realizado com sucesso!')
 
-      router.push('/dashboard')
+      router.push('/home')
     } catch (err) {
       toast.error('Ocorreu um erro ao tentar fazer login. Tente novamente mais tarde.')
     }

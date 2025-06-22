@@ -1,12 +1,13 @@
 'use client'
 import Input from "@/components/Input";
 import {Button} from "react-bootstrap";
-import {ChangeEvent, useEffect, useRef, useState} from "react";
+import {ChangeEvent, useRef, useState} from "react";
 import {Image, Buildings, Camera, CaretLeft, Lifebuoy, Volleyball, Clock, DotsThree} from "phosphor-react";
-import {EPlaceCategory, readablePlaceCategories} from "@/@types/place.interface";
+import {EPlaceCategory, ICreatePlaceDto, readablePlaceCategories} from "@/@types/place.interface";
 import clsx from "clsx";
-
-
+import {BottomMenu} from "@/components/BottomMenu";
+import {createPlace} from "@/actions/create-place";
+import {useRouter} from "next/navigation";
 
 const getCategoryIcon = (category: EPlaceCategory) => {
   switch (category) {
@@ -43,20 +44,23 @@ function CategoryCard({ category, isSelected, onClick}: ICategoryCardProps) {
 }
 
 export default function LocalRegister() {
+  const router = useRouter();
   const fileInput = useRef<HTMLInputElement | null>(null);
 
   const [name, setName] = useState('')
   const [location, setLocation] = useState('')
   const [category, setCategory] = useState(EPlaceCategory.Beach)
   const [description, setDescription] = useState('')
-  const [file, setFile] = useState<File | null>(null)
+  const [files, setFiles] = useState<File[]>([])
 
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     // e.target.files is FileList | null
     if (e.target.files && e.target.files[0]) {
-      setFile(e.target.files[0]);
+      setFiles(files => {
+        return [...files, e.target.files![0]]
+      });
     }
   };
 
@@ -64,32 +68,64 @@ export default function LocalRegister() {
     fileInput.current?.click();
   }
 
-  const submit = () => {}
+  const removeImage = (index: number) => {
+    setFiles(files => {
+      return files.filter((_, i) => i !== index);
+    });
+  }
+
+  const goBack = () => {
+    router.back();
+  }
+
+  const submit = async () => {
+    const fileUrls = [];
+    for (const file of files) {
+      const res = await fetch("/api/upload-file", {
+        method: "POST",
+        headers: { "Content-Type": file.type },
+        body: file,
+      });
+
+      const json = await res.json();
+      fileUrls.push(json.imageUrl);
+    }
+
+    const placeData: ICreatePlaceDto = {
+      title: name,
+      location,
+      category,
+      content: description,
+      imageUrls: fileUrls,
+    };
+
+    await createPlace(placeData);
+  }
 
   return <div className={"flex flex-col h-full overflow-y-auto"}>
     <div className={"bg-slate-900 flex items-center p-3"}>
-      <CaretLeft color={"white"} weight={"bold"}/>
+      <CaretLeft color={"white"} weight={"bold"} className={"cursor-pointer"} onClick={goBack}/>
       <span className={"text-white font-extrabold ml-2"}>Cadastrar Novo Local</span>
     </div>
     <div className={"p-4 bg-slate-50 h-full"}>
       <div className={"m-6 shadow-sm bg-white rounded-lg p-3 flex flex-col"}>
         <span className={"font-bold text-slate-800 mb-3"}>Informações Básicas</span>
 
-        <span className={"text-[14px] font-normal font-[#374151]"}>Foto do Local</span>
-        <div className={"cursor-pointer rounded-md border-1 border-slate-200 flex items-center justify-center w-full h-[150px]"} onClick={onClickFileInput}>
-          {file ? (
-            <img src={URL.createObjectURL(file)} alt={"Preview"} className={"w-full h-full object-cover rounded-md"}/>
-          ) : (
-            <>
-              <Camera size={24} className={"text-gray-400 mr-2"}/>
-              <span className={"text-gray-500 text-[14px]"}>Clique para adicionar uma foto</span>
-            </>
-          )}
+        <span className={"text-[14px] font-normal font-[#374151]"}>Fotos do Local</span>
+        <div className={"flex flex-wrap gap-2"}>
+          <div
+            className={"cursor-pointer rounded-md border-1 border-slate-200 flex flex-col items-center justify-center w-[200px] h-[150px] p-4"}
+            onClick={onClickFileInput}>
+            <Camera size={24} className={"text-gray-400 mr-2"}/>
+            <span className={"text-gray-500 text-[12px] text-center"}>Clique para adicionar uma foto</span>
+          </div>
+          {files.map((file, index) => <img src={URL.createObjectURL(file)} alt={"Preview"}
+                                  className={"w-[200px] h-[150px] object-cover rounded-md cursor-pointer"} onClick={() => removeImage(index)}/>)}
         </div>
+        <input type={"file"} accept={"image/*"} className={"hidden"} ref={fileInput} onChange={handleChange}/>
 
-        <input type={"file"} accept={"image/*"} className={"hidden"} ref={fileInput} onChange={handleChange} />
-
-        <Input label={"Nome do local"} wrapperClassName={"mt-3"} value={name} onChange={(e) => setName(e.target.value)} />
+        <Input label={"Nome do local"} wrapperClassName={"mt-3"} value={name}
+               onChange={(e) => setName(e.target.value)}/>
         <Input label={"Localização"} wrapperClassName={"mt-3"} value={location} onChange={e => setLocation(e.target.value)}/>
         <span className={"text-[14px] font-normal font-[#374151] mt-3 mb-1"}>Categoria</span>
         <div className={"flex gap-2"}>
@@ -111,5 +147,7 @@ export default function LocalRegister() {
         </Button>
       </div>
     </div>
+
+    <BottomMenu className={"sticky bottom-0"}/>
   </div>
 }

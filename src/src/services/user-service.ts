@@ -1,7 +1,7 @@
 import {readFileSync} from "fs";
 import path from "node:path";
 import {IUser, ICreateUserDto} from "@/@types/user.interface";
-import {NextResponse} from "next/server";
+import {v4} from "uuid";
 
 const filePath = path.join(
   "src",
@@ -9,7 +9,7 @@ const filePath = path.join(
   "users.json"
 );
 
-function readUsersRaw() {
+function readUsersRaw(): IUser[] {
   const raw = readFileSync(filePath, "utf-8");
   return JSON.parse(raw) ?? [];
 }
@@ -25,14 +25,18 @@ export function createUser(user: ICreateUserDto) {
   const users = readUsersRaw();
 
   fullUser.favorites = [];
-  fullUser.id = users.length > 0 ? users[users.length - 1].id : 0;
+  fullUser.id = v4();
 
-  users.push(user);
+  users.push(fullUser);
   writeUsersRaw(users);
 }
 
+export function getUserById(id: string) {
+  const users = readUsersRaw();
+  return users.find((user: IUser) => user.id === id)
+}
+
 export function getUserByEmail(email: string) {
-  console.log(__dirname)
   const users = readUsersRaw();
   return users.find((user: IUser) => user.email === email)
 }
@@ -44,6 +48,9 @@ export function updateUser(user: IUser) {
   if (index === -1) {
     return null;
   }
+
+  users[index] = user;
+  writeUsersRaw(users);
 
   return user;
 }

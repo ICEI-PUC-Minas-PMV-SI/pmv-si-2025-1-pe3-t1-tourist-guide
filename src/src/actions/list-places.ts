@@ -1,7 +1,9 @@
 'use server'
 
-import {readPlaces} from "@/services/place-service";
+import {readPlacesRaw} from "@/services/place-service";
 import {EPlaceCategory} from "@/@types/place.interface";
+import {getSession} from "@/services/session-service";
+import {redirect} from "next/navigation";
 
 export interface IListFilter {
   category?: string;
@@ -9,7 +11,12 @@ export interface IListFilter {
 }
 
 export async function listPlaces({ category, search }: IListFilter = {}) {
-  const places = readPlaces().filter(place => {
+  const session = await getSession();
+  if (!session) {
+    return redirect('/')
+  }
+
+  const places = readPlacesRaw().filter(place => {
     if (category && category !== EPlaceCategory.All && place.category !== category) {
       return false;
     }

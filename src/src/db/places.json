@@ -1,33 +1,33 @@
 [
   {
-    "imageUrl": "/praia.jpg",
+    "imageUrls": ["/praia.jpg"],
     "category": "city",
     "content": "Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.",
     "createdAt": "2025-06-22T00:00:00.000Z",
     "creatorId": 1,
-    "id": 1,
+    "id": "b8ce6a0f-903d-4d10-8a3b-87250a4ad675",
     "location": "Imbituba, SC",
     "title": "Praia da Rosa",
     "updatedAt": "2025-06-22T00:00:00.000Z"
   },
   {
-    "imageUrl": "/praia.jpg",
+    "imageUrls": ["/praia.jpg"],
     "category": "beach",
     "content": "Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.",
     "createdAt": "2025-06-22T00:00:00.000Z",
     "creatorId": 1,
-    "id": 2,
+    "id": "2a0c8843-d625-4dec-8794-d3d2733aa61b",
     "location": "Imbituba, SC",
     "title": "Praia da Rosa",
     "updatedAt": "2025-06-22T00:00:00.000Z"
   },
   {
-    "imageUrl": "/praia.jpg",
+    "imageUrls": ["/praia.jpg"],
     "category": "other",
     "content": "Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos. Uma das principais cidades do mundo, conhecida por sua cultura vibrante e pontos turísticos icônicos.",
     "createdAt": "2025-06-22T00:00:00.000Z",
     "creatorId": 1,
-    "id": 3,
+    "id": "481b418f-660d-4868-a321-e4421022eaba",
     "location": "Imbituba, SC",
     "title": "Museu de Arte Moderna",
     "updatedAt": "2025-06-22T00:00:00.000Z"

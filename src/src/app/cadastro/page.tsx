@@ -56,7 +56,7 @@ export default function RegisterPage() {
 
       toast.success('Conta criada com sucesso!')
 
-      router.push('/dashboard')
+      router.push('/home')
     }catch (err) {
       console.error(err)
       toast.error('Ocorreu um erro ao tentar criar a conta. Tente novamente mais tarde.')
