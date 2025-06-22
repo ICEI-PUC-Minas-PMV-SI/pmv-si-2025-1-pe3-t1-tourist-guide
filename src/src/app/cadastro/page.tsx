@@ -56,7 +56,7 @@ export default function RegisterPage() {
 
       toast.success('Conta criada com sucesso!')
 
-      router.push('/home')
+      router.push('/')
     }catch (err) {
       console.error(err)
       toast.error('Ocorreu um erro ao tentar criar a conta. Tente novamente mais tarde.')
@@ -102,7 +102,7 @@ export default function RegisterPage() {
           <Form.Control
             value={password}
             onChange={e => setPassword(e.target.value)}
-            placeholder={'Seu email'}
+            placeholder={'Sua senha'}
             type="password"
             id="password"
           />

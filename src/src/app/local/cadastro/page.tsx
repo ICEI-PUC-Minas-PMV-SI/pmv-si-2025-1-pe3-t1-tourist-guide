@@ -109,6 +109,8 @@ export default function LocalRegister() {
     };
 
     await createPlace(placeData);
+
+    router.push('/home');
   }
 
   return <div className={"flex flex-col h-full overflow-y-auto"}>
